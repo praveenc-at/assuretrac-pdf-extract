@@ -62,12 +62,12 @@ def read_table_to_excel(table_name, conn_params, excel_path):
     return excel_path
 
 # Streamlit UI
-st.set_page_config(page_title="Invoice PDF Extractor", layout="wide")
-st.title("📄 Invoice PDF Extractor")
+st.set_page_config(page_title="Assuretrac PDF Extractor", layout="wide")
+st.title("📄 Assuretrac PDF Extractor")
 
 # File uploader and question input
-uploaded_file = st.file_uploader("Upload your invoice PDF", type=["pdf"])
-question = st.text_input("Enter your extraction question", "")
+uploaded_file = st.file_uploader("Upload your PDF", type=["pdf"])
+question = st.text_input("Enter your extraction question(Explain detailed for complex extraction)", "")
 process_btn = st.button("Process PDF")
 
 if process_btn:
@@ -82,7 +82,7 @@ if process_btn:
                 file=(uploaded_file.name, uploaded_file, "application/pdf")
             )
             prompt = (
-                "Extract all relevant details from the invoice and answer the question: "
+                "Extract all relevant details from the input and answer the question: "
                 f"{question}. Return the output as a JSON array of objects."
             )
             response = client.beta.messages.create(
