@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 # 1. Anthropic API setup (set your key as environment variable for security)
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+# ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 load_dotenv()
 
