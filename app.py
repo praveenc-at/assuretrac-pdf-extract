@@ -78,7 +78,7 @@ if process_btn:
         st.error("Please enter a question.")
     else:
         with st.spinner("Extracting data..."):
-            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+            client = anthropic.Anthropic()
             file_upload = client.beta.files.upload(
                 file=(uploaded_file.name, uploaded_file, "application/pdf")
             )
