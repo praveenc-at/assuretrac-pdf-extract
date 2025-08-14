@@ -9,9 +9,10 @@ from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 # 1. Anthropic API setup (set your key as environment variable for security)
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+
 load_dotenv()
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 # 2. Postgres connection setup (optional, if you want to save)
 PG_CONN_PARAMS = dict(
     dbname="textile_db",
